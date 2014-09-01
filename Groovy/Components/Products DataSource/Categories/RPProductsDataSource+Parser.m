@@ -19,7 +19,10 @@
     NSArray *productsJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
     
     products = [MTLJSONAdapter modelsOfClass:[RPProduct class] fromJSONArray:productsJSON error:&error];
-    completion(products,error);
+    
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        completion(products,error);
+    });
 }
 
 @end

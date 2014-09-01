@@ -21,28 +21,28 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RPProductCellIdentifier" rowHeight="70" id="KD8-2n-nAt" customClass="RPProductTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RPProductCellIdentifier" rowHeight="70" id="KD8-2n-nAt" customClass="RPProductTableViewCell">
                                         <rect key="frame" x="0.0" y="86" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KD8-2n-nAt" id="r3G-YK-IyI">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H71-f9-0ju" userLabel="Product Photo">
-                                                    <rect key="frame" x="10" y="5" width="60" height="60"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H71-f9-0ju" userLabel="Product Photo">
+                                                    <rect key="frame" x="10" y="5" width="27" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="AZp-7H-lF3"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazing Product!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="149" translatesAutoresizingMaskIntoConstraints="NO" id="yDN-F2-CAu" userLabel="Product Name">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Amazing Product!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="149" translatesAutoresizingMaskIntoConstraints="NO" id="yDN-F2-CAu" userLabel="Product Name">
                                                     <rect key="frame" x="88" y="5" width="149" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feg-f1-8OY" userLabel="Product Price">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feg-f1-8OY" userLabel="Product Price">
                                                     <rect key="frame" x="270" y="26" width="40" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
@@ -70,6 +70,7 @@
                                             <outlet property="productImageView" destination="H71-f9-0ju" id="fur-Ma-ad6"/>
                                             <outlet property="productNameLabel" destination="yDN-F2-CAu" id="pcD-I6-pSQ"/>
                                             <outlet property="productPriceLabel" destination="feg-f1-8OY" id="EKK-fv-yrN"/>
+                                            <segue destination="xnR-uO-x41" kind="push" id="WfA-Mz-9wW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -95,6 +96,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMX-ba-dFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="151" y="30"/>
+        </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="mQK-V4-RRx">
+            <objects>
+                <viewController id="xnR-uO-x41" customClass="RPProductDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fVh-AY-wQp"/>
+                        <viewControllerLayoutGuide type="bottom" id="pjA-n8-UJH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IbW-1h-q6h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="xjw-ax-Erq">
+                                <rect key="frame" x="20" y="168" width="280" height="232"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="232" id="MY7-6z-hsm"/>
+                                    <constraint firstAttribute="width" constant="280" id="zBj-Z9-yqk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="xjw-ax-Erq" secondAttribute="centerY" id="YMw-4P-umw"/>
+                            <constraint firstAttribute="centerX" secondItem="xjw-ax-Erq" secondAttribute="centerX" id="q0P-hV-ll5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NAn-XK-Ji9"/>
+                    <connections>
+                        <outlet property="productDescriptionLabel" destination="xjw-ax-Erq" id="vq1-oz-rhh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X5j-gu-Xv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="30"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sQ7-Yn-5BI">

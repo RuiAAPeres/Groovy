@@ -14,6 +14,7 @@
 @property(nonatomic,strong)NSString *name;
 @property(nonatomic,strong)NSString *price;
 @property(nonatomic,strong)NSArray *photos;
+@property(nonatomic,strong)NSString *productDescription;
 
 @end
 
@@ -34,7 +35,8 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"photos" : @"photos"
+             @"photos" : @"photos",
+             @"productDescription" : @"description"
              };
 }
 

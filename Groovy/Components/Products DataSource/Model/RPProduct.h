@@ -15,5 +15,6 @@
 @property(nonatomic,strong,readonly)NSString *name;
 @property(nonatomic,strong,readonly)NSString *price;
 @property(nonatomic,strong,readonly)NSArray *photos;
+@property(nonatomic,strong,readonly)NSString *productDescription;
 
 @end

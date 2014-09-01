@@ -10,6 +10,10 @@
 #import "RPProductTableViewCell.h"
 #import "RPProductsDataSource.h"
 
+#import "RPProductDetailViewController.h"
+
+#import "RPProduct.h"
+
 static NSString *const RPProductCellIdentifier = @"RPProductCellIdentifier";
 
 @interface RPProductsViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -26,6 +30,7 @@ static NSString *const RPProductCellIdentifier = @"RPProductCellIdentifier";
 - (void)dealloc
 {
     [_products release], _products = nil;
+    
     self.tableView = nil;
     
     [super dealloc];
@@ -37,12 +42,31 @@ static NSString *const RPProductCellIdentifier = @"RPProductCellIdentifier";
 {
     [super viewDidLoad];
     
+    
+    __unsafe_unretained typeof(self) weekSelf = self;
     [RPProductsDataSource productsWithCompletionBlock:^(NSArray *products, NSError *error) {
+        RPProductsViewController *strongSelf = weekSelf;
         
-        // TODO: Handle the Error
-        self.products = products;
-        [self.tableView reloadData];
+        if (strongSelf)
+        {
+            // TODO: Handle the Error
+            strongSelf.products = products;
+            [strongSelf.tableView reloadData];
+        }
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+   NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+   RPProduct *product = self.products[indexPath.row];
+    
+    if ([segue.destinationViewController isKindOfClass:[RPProductDetailViewController class]])
+    {
+        RPProductDetailViewController *productDetailViewController = (RPProductDetailViewController *)segue.destinationViewController;
+        
+        productDetailViewController.product = product;
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -65,5 +89,7 @@ static NSString *const RPProductCellIdentifier = @"RPProductCellIdentifier";
 {
     return 70.0;
 }
+
+
 
 @end

@@ -9,6 +9,12 @@
 #import "RPProductsDataSource.h"
 #import "RPProductsDataSource+Web.h"
 
+@interface RPProductsDataSource ()
+
+@property(nonatomic,copy)RPProductsDataSourceCompletion completion;
+
+@end
+
 @implementation RPProductsDataSource
 
 #pragma mark - Products Protocol

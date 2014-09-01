@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		89126068AF7049E7B8260804 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C69EA024F14060AD404E28 /* libPods.a */; };
+		C73C2AA019B467F900A38381 /* RPProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73C2A9F19B467F900A38381 /* RPProductDetailViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C743C1F419B3AC8200D28580 /* RPUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C743C1F319B3AC8200D28580 /* RPUtil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C765A47C19B3AE6B007A73F2 /* mock_data.json in Resources */ = {isa = PBXBuildFile; fileRef = C765A47B19B3AE6B007A73F2 /* mock_data.json */; };
 		C765A48819B3B5B3007A73F2 /* RPProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C765A48619B3B5B3007A73F2 /* RPProductsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -50,6 +51,8 @@
 		4F3E4EACB15F494D86A5AE6F /* Pods-NOTHSTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOTHSTests.xcconfig"; path = "Pods/Pods-NOTHSTests.xcconfig"; sourceTree = "<group>"; };
 		889FE0F31C9547449335B08E /* libPods-GroovyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GroovyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C69EA024F14060AD404E28 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C73C2A9E19B467F900A38381 /* RPProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPProductDetailViewController.h; sourceTree = "<group>"; };
+		C73C2A9F19B467F900A38381 /* RPProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPProductDetailViewController.m; sourceTree = "<group>"; };
 		C743C1F219B3AC8200D28580 /* RPUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPUtil.h; sourceTree = "<group>"; };
 		C743C1F319B3AC8200D28580 /* RPUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPUtil.m; sourceTree = "<group>"; };
 		C765A47B19B3AE6B007A73F2 /* mock_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_data.json; sourceTree = "<group>"; };
@@ -111,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C73C2A9D19B467EB00A38381 /* Product Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C73C2A9E19B467F900A38381 /* RPProductDetailViewController.h */,
+				C73C2A9F19B467F900A38381 /* RPProductDetailViewController.m */,
+			);
+			path = "Product Detail";
+			sourceTree = "<group>";
+		};
 		C765A47A19B3AE64007A73F2 /* MockData */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +255,7 @@
 		C7F8F11519B39EB600D8E425 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C73C2A9D19B467EB00A38381 /* Product Detail */,
 				C765A48119B3B5B3007A73F2 /* Product */,
 			);
 			path = ViewControllers;
@@ -477,6 +490,7 @@
 				C7F8F12919B3A4BA00D8E425 /* RPProduct.m in Sources */,
 				C765A48C19B3B657007A73F2 /* RPProductTableViewCell.m in Sources */,
 				C7F8F11E19B3A0F200D8E425 /* RPProductsDataSource.m in Sources */,
+				C73C2AA019B467F900A38381 /* RPProductDetailViewController.m in Sources */,
 				C7F8F10E19B39CE500D8E425 /* RPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

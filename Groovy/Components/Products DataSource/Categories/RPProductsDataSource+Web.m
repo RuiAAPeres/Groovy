@@ -19,16 +19,16 @@ static NSString *const RPProductsEndPoint = @"http://store.grooveshark.com/produ
     NSURLSession *session = [NSURLSession sharedSession];
     
     [[session dataTaskWithURL:productsEndPointURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (error)
-            {
+        if (error)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
                 completionBlock(nil,error);
-            }
-            else
-            {
-                [RPProductsDataSource parseProductsData:data withCompletion:completionBlock];
-            }
-        });
+            });
+        }
+        else
+        {
+            [RPProductsDataSource parseProductsData:data withCompletion:completionBlock];
+        }
     }] resume];
 }
 
